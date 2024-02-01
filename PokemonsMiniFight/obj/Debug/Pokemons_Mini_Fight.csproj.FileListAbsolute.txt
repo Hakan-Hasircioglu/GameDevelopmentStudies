@@ -1,0 +1,7 @@
+C:\Users\hasir\OneDrive\Masaüstü\Pokemons_Mini_Fight\bin\Debug\Pokemons_Mini_Fight.exe.config
+C:\Users\hasir\OneDrive\Masaüstü\Pokemons_Mini_Fight\bin\Debug\Pokemons_Mini_Fight.exe
+C:\Users\hasir\OneDrive\Masaüstü\Pokemons_Mini_Fight\bin\Debug\Pokemons_Mini_Fight.pdb
+C:\Users\hasir\OneDrive\Masaüstü\Pokemons_Mini_Fight\obj\Debug\Pokemons_Mini_Fight.csproj.AssemblyReference.cache
+C:\Users\hasir\OneDrive\Masaüstü\Pokemons_Mini_Fight\obj\Debug\Pokemons_Mini_Fight.csproj.CoreCompileInputs.cache
+C:\Users\hasir\OneDrive\Masaüstü\Pokemons_Mini_Fight\obj\Debug\Pokemons_Mini_Fight.exe
+C:\Users\hasir\OneDrive\Masaüstü\Pokemons_Mini_Fight\obj\Debug\Pokemons_Mini_Fight.pdb
