@@ -130,7 +130,7 @@ namespace Pokemons_Mini_Fight
                 #region Momentary Ones
                 Console.WriteLine();
                 Console.WriteLine($"Round {i}");
-                Console.WriteLine();
+                Console.WriteLine(new string ('-', 50));
                 Console.WriteLine($"{ChooseOne} Attacks {ChooseEnemy} and deals {ChoosenAttack} damage ");
                 Console.WriteLine($"{ChooseEnemy} Attacks {ChooseOne} and deals {EnemyAttack} damage ");
                 Console.WriteLine();
