@@ -15,7 +15,10 @@ namespace MiniAdventureStory
         {
             #region Variables
             bool dead = false;
+            string playerName = "";
+            string firstChooseIs = "";
             #endregion
+
             while (true)
             {
                 #region Asking Name
@@ -37,10 +40,29 @@ namespace MiniAdventureStory
                 #endregion
 
                 #region Choosing Name
-                Console.Write(@break() + "Player:  ");
-                string playerName = Console.ReadLine();
+                
+                while (true)
+                {
+                    Console.Write(@break() + "Player:  ");
+                    string playerNameis = Console.ReadLine();
+                    hr();
+                    Console.WriteLine(@break() + "Are you sure? Y/N");
+                    hr();
+                    Console.Write(@break() + "Player:  ");
+                    string areYouSure = Console.ReadLine();
+                    playerName = playerNameis;
+                    if (areYouSure == "N" || areYouSure == "n")
+                    {
+                        Console.WriteLine(@break() + "Your name?");
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
                 hr();
-
+                
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(
     @"\________\--------___       ___         ____----------/_________/
@@ -146,200 +168,186 @@ namespace MiniAdventureStory
                 #region First Choose
                 Console.WriteLine(
                     "A)\t Take a look around and see if there's anything useful.\n" +
-                    "B)\t Walk up to the cat and say \"fuck you\".");
-                hr();
-                Console.Write(@break() +
-                    $"{playerName}: ");
-                string firstChoose = Console.ReadLine();
-                hr();
-                if (firstChoose == "A" || firstChoose == "a")
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine(@"
-               +--------------+
-              /              /|
-             *--+-----------* |
-            |              |  |
-            |              + -+
-            |              |/
-            *--------------*");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    "B)\t Walk up to the cat and say \"fuck you\".");  
+                while (true)
+                { 
                     hr();
-                    Console.WriteLine(@break() + "There's almost nothing in the cave, but a little ");
-                    Console.WriteLine(@break() + "further on you can see a box.");
-                    longhr();
-                }
-                else if (firstChoose == "B" || firstChoose == "b")
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine(@"
-                   _                         _
-                  |_|              Fuck You |_|
-                  | |         /^^^\         | |
-                 _| |_       (|""o""|)       _| |_
-               _| | | | _    (_---_)    _ | | | |_ 
-              | | | | |' |    _| |_    | `| | | | |
-              \          /   / \ /   \  \         /
-               \        /  / /| | |\ \   \       /
-                 \    /  / /  |_|_|  \ \  \    /
-                   \  \/ /    || ||    \ \/  /
-                     \_/      || ||      \_/
-                              () ()
-                              || ||
-                            ooO Ooo");
-                    Console.ForegroundColor = ConsoleColor.White;
-                    longhr();
-                    Console.WriteLine(@break() + "Immediately after swearing, the giant cat turns");
-                    Console.WriteLine(@break() + "to you and recognises you.");
-                    longhr();
-                    dead = Dead();
-                    Console.WriteLine("Do you want try again? Y/N");
-                    string again = Console.ReadLine();
-                    if (again == "Y" || again == "y")
+                    Console.Write(@break() + $"{playerName}: ");
+                    string firstChoose = Console.ReadLine();
+                    hr();
+                    if (firstChoose == "A" || firstChoose == "a")
                     {
-                        Console.WriteLine("Restarting...");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.WriteLine(@"
+                   +--------------+
+                  /              /|
+                 *--+-----------* |
+                |              |  |
+                |              + -+
+                |              |/
+                *--------------*");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        hr();
+                        Console.WriteLine(@break() + "There's almost nothing in the cave, but a little ");
+                        Console.WriteLine(@break() + "further on you can see a box.");
+                        longhr();
+                        firstChooseIs = firstChoose;
+                        break;
+                    }
+                    else if (firstChoose == "B" || firstChoose == "b")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine(@"
+                       _                         _
+                      |_|              Fuck You |_|
+                      | |         /^^^\         | |
+                     _| |_       (|""o""|)       _| |_
+                   _| | | | _    (_---_)    _ | | | |_ 
+                  | | | | |' |    _| |_    | `| | | | |
+                  \          /   / \ /   \  \         /
+                   \        /  / /| | |\ \   \       /
+                     \    /  / /  |_|_|  \ \  \    /
+                       \  \/ /    || ||    \ \/  /
+                         \_/      || ||      \_/
+                                  () ()
+                                  || ||
+                                ooO Ooo");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        longhr();
+                        Console.WriteLine(@break() + "Immediately after swearing, the giant cat turns");
+                        Console.WriteLine(@break() + "to you and recognises you.");
+                        longhr();
+                        dead = Dead();
+                        break;
                     }
                     else
                     {
-                        credits();
-                        break;
+                        Console.WriteLine(@break() + "Invalid input!");
                     }
-                    
                 }
-                else
-                {
-                    Console.WriteLine(@break() + "You gave the wrong answer!\nStart again.");
-                    continue;
-                }
+                
                 #endregion
 
                 #region Second Choose
-                if (firstChoose == "A" || firstChoose == "a")
+                if (firstChooseIs == "A" || firstChooseIs == "a")
                 {
                     Console.WriteLine(
                     "A)\t Run towards the box.\n" +
                     "B)\t Throw a stone into the box to attract the attention of the giant cat.");
-                    hr();
-                    Console.Write(@break() +
-                        $"{playerName}: ");
-                    string secondChoose = Console.ReadLine();
-                    hr();
-                    if (secondChoose == "A" || secondChoose == "a")
+                    while (true)
                     {
-                        Console.WriteLine(@break() + "The giant cat spotted you.");
-                        longhr();
-                        dead = Dead();
-                        Console.WriteLine("Do you want try again? Y/N");
-                        string again = Console.ReadLine();
-                        if (again == "Y" || again == "y")
+                        hr();
+                        Console.Write(@break() +
+                        $"{playerName}: ");
+                        string secondChoose = Console.ReadLine();
+                        hr();
+                        if (secondChoose == "A" || secondChoose == "a")
                         {
-                            Console.WriteLine("Restarting...");
+                            Console.WriteLine(@break() + "The giant cat spotted you.");
+                            longhr();
+                            dead = Dead();
+                            break;
+                        }
+                        else if (secondChoose == "B" || secondChoose == "b")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(@"
+                        __        .-.
+                     .-""` .`'.   /\|
+             _(\-/)_"" ,  .   ,\ /\/
+            {(#b^d#)} .   ./,  |/\/
+            `-.(Y).-`  ,  |  , |\/
+                 /~/,_/~~~\,__.-`
+                ////~    // ~\\
+               ==`==`   ==`   ==`");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.WriteLine(@break() + "You scared the cat and got its attention.");
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(@"
+                        /)
+                       //
+                      //
+                     ((
+                      \\
+                       ))
+                      //
+                  _,-'""._
+                 /_  ,   \
+                 |   '   /
+                 \)    ,\'
+                 '|      \
+                 /   |   )
+                /_   ,  /
+               /  _  % (
+               ) /    ' \
+              /        \_)
+              ),    )_   \_  ,
+             _/    _/%     \/)
+            ('  __/ \ ___    \,
+             \   (   `""-  __  /
+              '\  \   ((   >  \
+                )  \   '-.-,_='~~~  ~
+                ('  /         ' ~~ ~  ~~ ~~
+               "" """"
+    ");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(@"
+                                                             _...---.._
+                                                         _.'`       -_  `.
+                                                     .-'`                  \
+                                                  .-`                   -\  \
+                                               _-`                       __  \
+                                           .-'`                  . ' .   \ `;/
+                                       _.-`                    /       `._`/
+                               _...--'`                        \_
+                            .'`                         -         `'--.._
+                         . `                           \                  `-.
+                        .                `              `-..__. ... - -.._`- 
+                       '.                `  '_''---- -''`                 `-.`.
+                     .` -                '`./
+                  .-` .` '             .`'.
+              _.-` .-`   '            /
+          _.-`  .-`       '         .`
+    (`''-'' _.-`          '        .'
+     `'---''            .`       .`
+                     .'     . '`
+                    .    .-`
+                  .`   ,`
+                 '   .'
+               '   .`
+              '  .`
+              `  '.
+              `.___;");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(@"
+              ,-.       _,---._ __  / \
+             /  )    .-'       `./ /   \
+            (  (   ,'            `/    /|
+             \  `-""             \'\   / |
+              `.              ,  \ \ /  |
+               /`.          ,'-`----Y   |
+              (            ;        |   '
+              |  ,-.    ,-'         |  /
+              |  | (   |            | /
+              )  |  \  `.___________|/
+              `--'   `--'");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.WriteLine(@break() + "Giant cat inspects the inside of the box.");
+                            hr();
+                            break;
                         }
                         else
                         {
-                            credits();
-                            break;
+                            Console.WriteLine(@break() + "Invalid input!");
+                            continue;
                         }
-                        
-                    }
-                    else if (secondChoose == "B" || secondChoose == "b")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine(@"
-                    __        .-.
-                 .-""` .`'.   /\|
-         _(\-/)_"" ,  .   ,\ /\/
-        {(#b^d#)} .   ./,  |/\/
-        `-.(Y).-`  ,  |  , |\/
-             /~/,_/~~~\,__.-`
-            ////~    // ~\\
-           ==`==`   ==`   ==`");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        Console.WriteLine(@break() + "You scared the cat and got its attention.");
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine(@"
-                    /)
-                   //
-                  //
-                 ((
-                  \\
-                   ))
-                  //
-              _,-'""._
-             /_  ,   \
-             |   '   /
-             \)    ,\'
-             '|      \
-             /   |   )
-            /_   ,  /
-           /  _  % (
-           ) /    ' \
-          /        \_)
-          ),    )_   \_  ,
-         _/    _/%     \/)
-        ('  __/ \ ___    \,
-         \   (   `""-  __  /
-          '\  \   ((   >  \
-            )  \   '-.-,_='~~~  ~
-            ('  /         ' ~~ ~  ~~ ~~
-           "" """"
-");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine(@"
-                                                         _...---.._
-                                                     _.'`       -_  `.
-                                                 .-'`                  \
-                                              .-`                   -\  \
-                                           _-`                       __  \
-                                       .-'`                  . ' .   \ `;/
-                                   _.-`                    /       `._`/
-                           _...--'`                        \_
-                        .'`                         -         `'--.._
-                     . `                           \                  `-.
-                    .                `              `-..__. ... - -.._`- 
-                   '.                `  '_''---- -''`                 `-.`.
-                 .` -                '`./
-              .-` .` '             .`'.
-          _.-` .-`   '            /
-      _.-`  .-`       '         .`
-(`''-'' _.-`          '        .'
- `'---''            .`       .`
-                 .'     . '`
-                .    .-`
-              .`   ,`
-             '   .'
-           '   .`
-          '  .`
-          `  '.
-          `.___;");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine(@"
-          ,-.       _,---._ __  / \
-         /  )    .-'       `./ /   \
-        (  (   ,'            `/    /|
-         \  `-""             \'\   / |
-          `.              ,  \ \ /  |
-           /`.          ,'-`----Y   |
-          (            ;        |   '
-          |  ,-.    ,-'         |  /
-          |  | (   |            | /
-          )  |  \  `.___________|/
-          `--'   `--'");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        Console.WriteLine(@break() + "Giant cat inspects the inside of the box.");
-                        hr();
-                    }
-                    else
-                    {
-                        Console.WriteLine(@break() + "You gave the wrong answer!\nStart again.");
-                        continue;
                     }
                 }
                 #endregion
@@ -349,169 +357,161 @@ namespace MiniAdventureStory
                 {
                     Console.WriteLine(
                     "A)\t The giant cat's arse looks like it deserves a kick.\n" +
-                    "B)\t Try to go out in quiet and calm steps.");
-                    hr();
-                    Console.Write(@break() +
-                        $"{playerName}: ");
-                    string secondChoose = Console.ReadLine();
-                    hr();
-                    if (secondChoose == "A" || secondChoose == "a")
+                    "B)\t Try to go out in quiet and calm steps.");               
+                    while (true)
                     {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine(@"
-         /\     /\
-        {  `---'  }
-        {  O   O  }
-        ~~>  V  <~~
-         \  \|/  /
-          `-----'____
-          /     \    \_
-        {       }\  )_\_   _
-        |  \_/  |/ /  \_\_/ )
-          \__/  /(_/     \__/
-          (__/");
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine(@break() + "Really?");
-                        Console.WriteLine(@break() + "The giant cat spotted you.");
-                        longhr();
-                        dead = Dead();
-                        Console.WriteLine("Do you want try again? Y/N");
-                        string again = Console.ReadLine();
-                        if (again == "Y" || again == "y")
+                        hr();
+                        Console.Write(@break() + $"{playerName}: ");
+                        string secondChoose = Console.ReadLine();
+                        hr();
+                        if (secondChoose == "A" || secondChoose == "a")
                         {
-                            Console.WriteLine("Restarting...");
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            Console.WriteLine(@"
+             /\     /\
+            {  `---'  }
+            {  O   O  }
+            ~~>  V  <~~
+             \  \|/  /
+              `-----'____
+              /     \    \_
+            {       }\  )_\_   _
+            |  \_/  |/ /  \_\_/ )
+              \__/  /(_/     \__/
+              (__/");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.WriteLine(@break() + "Really?");
+                            Console.WriteLine(@break() + "The giant cat spotted you.");
+                            longhr();
+                            dead = Dead();
+                            break;
+                        }
+                        else if (secondChoose == "B" || secondChoose == "b")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine(@"
+        Y
+      .-^-.
+     /     \      .- ~ ~ -.
+    ()     ()    /   _ _   `.                     _ _ _
+     \_   _/    /  /     \   \                . ~  _ _  ~ .
+       | |     /  /       \   \             .' .~       ~-. `.
+       | |    /  /         )   )           /  /             `.`.
+       \ \_ _/  /         /   /           /  /                `'
+        \_ _ _.'         /   /           (  (
+                        /   /             \  \
+                       /   /               \  \
+                      /   /                 )  )
+                     (   (                 /  /
+                      `.  `.             .'  /
+                        `.   ~ - - - - ~   .'
+                           ~ . _ _ _ _ . ~");
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine(@break() + "You ran away like a snake without making a sound.");
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine(@"
+                 .       .
+                 |\_---_/|
+                /   o_o   \
+                |    U    |
+                \  ._I_.  /
+                 `-_____-'");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.WriteLine(@break() + "Well done, you escaped from the cave.");
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine(@"
+                .               ,.
+              T.""-._..---.._,-""/|
+              l|""-.  _.v._   ("" |
+              [l /.'_ \; _~""-.`-t
+              Y "" _(o} _{o)._ ^.|
+              j  T  ,--.  T  ]
+              \  l ( /-^-\ ) !  !
+               \. \.  ""~""  ./  /c-..,__
+                 ^r- .._ .- .-""  `- .  ~""--.
+                  > \.                      \
+                  ]   ^.                     \
+                  3  .  "">            .       Y  -Row
+     ,.__.--._   _j   \ ~   .         ;       |
+    (    ~""-._~""^._\   ^.    ^._      I     . l
+     ""-._ ___ ~""-,_7    .Z-._   7""   Y      ;  \        _
+        /""   ""~-(r r  _/_--._~-/    /      /,.--^-._   / Y
+        ""-._    '""~~~>-._~]>--^---./____,.^~        ^.^  !
+            ~--._    '   Y---.                        \./
+                 ~~--._  l_   )                        \
+                       ~-._~~~---._,____..---           \
+                           ~----""~       \
+                                          \");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine(@break() + "Or were you kidnapped?");
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(@"
+                       .'\   /`.
+                     .'.-.`-'.-.`.
+                ..._:   .-. .-.   :_...
+              .'    '-.(o ) (o ).-'    `.
+             :  _    _ _`~(_)~`_ _    _  :
+            :  /:   ' .-=_   _=-. `   ;\  :
+            :   :|-.._  '     `  _..-|:   :
+             :   `:| |`:-:-.-:-:'| |:'   :
+              `.   `.| | | | | | |.'   .'
+                `.   `-:_| | |_:-'   .'
+                  `-._   ````    _.-'
+                      ``-------''");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(@break() + "HE HE HE HE HE");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(@"
+                         oOOO()
+                         /  _)
+                         |  (         \  \
+                         \__)  ()OOOo  \  \____________________      
+                                (_  \   \       HE HE HE HE HE |
+                                 )  |    \_____________________/
+                         oOOO    (__/
+                         /  _)
+                         |  (
+                         \__)  ()OOOo
+                                (_  \
+                                 )  |
+                         oOOO()  (__/
+                         /  _)
+                         |  (
+                         \__)  ()OOOo
+                                (_  \
+                                 )  |
+                         oOOO()  (__/
+                         /  _)
+                         |  (
+                         \__)  ()OOOo
+                                (_  \
+                                 )  |
+                                 (__/");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(@break() + "HE HE HE HE HE");
+                            Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
+                            credits();
+                            return;
                         }
                         else
                         {
-                            credits();
-                            break;
+                            Console.WriteLine(@break() + "You gave the wrong answer!\nStart again.");
+                            continue;
                         }
-                        
-                    }
-                    else if (secondChoose == "B" || secondChoose == "b")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine(@"
-    Y
-  .-^-.
- /     \      .- ~ ~ -.
-()     ()    /   _ _   `.                     _ _ _
- \_   _/    /  /     \   \                . ~  _ _  ~ .
-   | |     /  /       \   \             .' .~       ~-. `.
-   | |    /  /         )   )           /  /             `.`.
-   \ \_ _/  /         /   /           /  /                `'
-    \_ _ _.'         /   /           (  (
-                    /   /             \  \
-                   /   /               \  \
-                  /   /                 )  )
-                 (   (                 /  /
-                  `.  `.             .'  /
-                    `.   ~ - - - - ~   .'
-                       ~ . _ _ _ _ . ~");
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine(@break() + "You ran away like a snake without making a sound.");
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine(@"
-             .       .
-             |\_---_/|
-            /   o_o   \
-            |    U    |
-            \  ._I_.  /
-             `-_____-'");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        Console.WriteLine(@break() + "Well done, you escaped from the cave.");
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine(@"
-            .               ,.
-          T.""-._..---.._,-""/|
-          l|""-.  _.v._   ("" |
-          [l /.'_ \; _~""-.`-t
-          Y "" _(o} _{o)._ ^.|
-          j  T  ,--.  T  ]
-          \  l ( /-^-\ ) !  !
-           \. \.  ""~""  ./  /c-..,__
-             ^r- .._ .- .-""  `- .  ~""--.
-              > \.                      \
-              ]   ^.                     \
-              3  .  "">            .       Y  -Row
- ,.__.--._   _j   \ ~   .         ;       |
-(    ~""-._~""^._\   ^.    ^._      I     . l
- ""-._ ___ ~""-,_7    .Z-._   7""   Y      ;  \        _
-    /""   ""~-(r r  _/_--._~-/    /      /,.--^-._   / Y
-    ""-._    '""~~~>-._~]>--^---./____,.^~        ^.^  !
-        ~--._    '   Y---.                        \./
-             ~~--._  l_   )                        \
-                   ~-._~~~---._,____..---           \
-                       ~----""~       \
-                                      \");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine(@break() + "Or were you kidnapped?");
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(@"
-                   .'\   /`.
-                 .'.-.`-'.-.`.
-            ..._:   .-. .-.   :_...
-          .'    '-.(o ) (o ).-'    `.
-         :  _    _ _`~(_)~`_ _    _  :
-        :  /:   ' .-=_   _=-. `   ;\  :
-        :   :|-.._  '     `  _..-|:   :
-         :   `:| |`:-:-.-:-:'| |:'   :
-          `.   `.| | | | | | |.'   .'
-            `.   `-:_| | |_:-'   .'
-              `-._   ````    _.-'
-                  ``-------''");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(@break() + "HE HE HE HE HE");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(@"
-                     oOOO()
-                     /  _)
-                     |  (         \  \
-                     \__)  ()OOOo  \  \____________________      
-                            (_  \   \       HE HE HE HE HE |
-                             )  |    \_____________________/
-                     oOOO    (__/
-                     /  _)
-                     |  (
-                     \__)  ()OOOo
-                            (_  \
-                             )  |
-                     oOOO()  (__/
-                     /  _)
-                     |  (
-                     \__)  ()OOOo
-                            (_  \
-                             )  |
-                     oOOO()  (__/
-                     /  _)
-                     |  (
-                     \__)  ()OOOo
-                            (_  \
-                             )  |
-                             (__/");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(@break() + "HE HE HE HE HE");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        longhr();
-                        credits();
-                    }
-                    else
-                    {
-                        Console.WriteLine(@break() + "You gave the wrong answer!\nStart again.");
-                        continue;
                     }
                 }
                 #endregion
@@ -561,7 +561,8 @@ namespace MiniAdventureStory
             dead = true;
             Console.ForegroundColor = ConsoleColor.White;
             longhr();
-            
+            Console.WriteLine(@break() + "Back to the beginning...");
+            longhr();
             return dead;
         }
 
@@ -573,13 +574,13 @@ namespace MiniAdventureStory
         private static void hr()
         {
             Console.WriteLine(new string('-', 80));
-            
+            Thread.Sleep(1500);
         }
 
         private static void longhr()
         {
             Console.WriteLine(new string('-', 80));
-           
+            Thread.Sleep(3000);
         }
 
         private static void credits()
