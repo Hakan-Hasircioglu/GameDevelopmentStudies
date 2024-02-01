@@ -1,0 +1,7 @@
+C:\Users\hasir\OneDrive\Masaüstü\MiniAdventureStory\bin\Debug\MiniAdventureStory.exe.config
+C:\Users\hasir\OneDrive\Masaüstü\MiniAdventureStory\bin\Debug\MiniAdventureStory.exe
+C:\Users\hasir\OneDrive\Masaüstü\MiniAdventureStory\bin\Debug\MiniAdventureStory.pdb
+C:\Users\hasir\OneDrive\Masaüstü\MiniAdventureStory\obj\Debug\MiniAdventureStory.csproj.AssemblyReference.cache
+C:\Users\hasir\OneDrive\Masaüstü\MiniAdventureStory\obj\Debug\MiniAdventureStory.csproj.CoreCompileInputs.cache
+C:\Users\hasir\OneDrive\Masaüstü\MiniAdventureStory\obj\Debug\MiniAdventureStory.exe
+C:\Users\hasir\OneDrive\Masaüstü\MiniAdventureStory\obj\Debug\MiniAdventureStory.pdb
