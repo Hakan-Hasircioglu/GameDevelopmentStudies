@@ -22,7 +22,6 @@ namespace MiniAdventureStory
             while (true)
             {
                 #region Asking Name
-                hr();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(
     @"\________\--------___       ___         ____----------/_________/
@@ -38,7 +37,7 @@ namespace MiniAdventureStory
                 Console.WriteLine(@break() + "Angel: Hello Shinsine, What is your name?");
                 hr();
                 #endregion
-
+                
                 #region Choosing Name
                 
                 while (true)
@@ -51,6 +50,7 @@ namespace MiniAdventureStory
                     Console.Write(@break() + "Player:  ");
                     string areYouSure = Console.ReadLine();
                     playerName = playerNameis;
+                    Console.Clear();
                     if (areYouSure == "N" || areYouSure == "n")
                     {
                         Console.WriteLine(@break() + "Your name?");
@@ -60,9 +60,8 @@ namespace MiniAdventureStory
                     {
                         break;
                     }
+                    
                 }
-                hr();
-                
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(
     @"\________\--------___       ___         ____----------/_________/
@@ -77,10 +76,13 @@ namespace MiniAdventureStory
                 hr();
                 Console.WriteLine(@break() + $"Angel: Hello {playerName}.");
                 longhr();
+                longhr();
                 #endregion
 
                 #region Waking
                 Console.ForegroundColor = ConsoleColor.Red;
+                Console.Clear();
+
                 Console.WriteLine(@"       
                   _,--~~~~~--,_gggrgM**M#mggg__ 
               __,---,_        `\ wgNN@""B*P""""mp""""@d#""@N#Nw__
@@ -92,13 +94,15 @@ namespace MiniAdventureStory
                `--,_____,--' ,FF_#"" 9_ _#""  ""b_  g@   ""hg  _#""  !q_ jF ""*_09_");
                 Console.ForegroundColor = ConsoleColor.White;
                 longhr();
+                
                 Console.WriteLine(@break() + $"Wake up! Wake up!");
                 Thread.Sleep(1000);
                 Console.WriteLine(@break() + $"Wake u... Wake...");
-                hr();
+                longhr(); longhr();
                 #endregion
 
                 #region Begin Story
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(@"
            \\\     \\       \\     \      \\   \\
@@ -121,9 +125,11 @@ namespace MiniAdventureStory
                           """"MMMmm..            _,mMMMM""""""
                                """"MMMMMMMMMMMMMM""""""""");
                 Console.ForegroundColor = ConsoleColor.White;
-                longhr();
+                longhr(); 
                 Console.WriteLine(@break() + "Suddenly you open your eyes and realise you're dreaming.");
                 longhr();
+                longhr();
+                Console.Clear();
                 Console.WriteLine(@"
 .                             .-.    .  _   *     _   .      
                   *          /   \     ((       _/ \       *    .
@@ -139,15 +145,17 @@ namespace MiniAdventureStory
          @88:::&(&8&&8:::::%&`.~-_~~-~~_~-~_~-~~=.'@(&%::::%@8&8)::&#@8::::
          `::::::8%@@%:::::@%&8:`.=~~-.~~-.~~=..~'8::::::::&@8:::::&8:::::'
           `::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.'");
-                hr();
+                longhr(); 
                 Console.WriteLine(@break() + "You can barely observe the surroundings from the low light inside\n" +
                     @break() +
                     "and you can understand that you are in a cave in the mountains.");
+                longhr();
                 longhr();
                 #endregion
 
                 #region Look at the Giant Cat
                 Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Clear();
                 Console.WriteLine(@"
                                   (`.-,')                 _..._ 
                                 .-'     ;              ./       \
@@ -159,12 +167,12 @@ namespace MiniAdventureStory
             ('_  _,'.'  (___,))
              `-:;.-'");
                 Console.ForegroundColor = ConsoleColor.White;
-                hr();
+                longhr();
                 Console.WriteLine(@break() + "You see the Giant Cat standing with its back turned");
                 Console.WriteLine(@break() + "at the cave exit.");
                 longhr();
                 #endregion
-
+                
                 #region First Choose
                 Console.WriteLine(
                     "A)\t Take a look around and see if there's anything useful.\n" +
@@ -175,8 +183,10 @@ namespace MiniAdventureStory
                     Console.Write(@break() + $"{playerName}: ");
                     string firstChoose = Console.ReadLine();
                     hr();
+                    
                     if (firstChoose == "A" || firstChoose == "a")
                     {
+                        Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine(@"
                    +--------------+
@@ -196,6 +206,7 @@ namespace MiniAdventureStory
                     }
                     else if (firstChoose == "B" || firstChoose == "b")
                     {
+                        Console.Clear();
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine(@"
                        _                         _
@@ -217,6 +228,7 @@ namespace MiniAdventureStory
                         Console.WriteLine(@break() + "Immediately after swearing, the giant cat turns");
                         Console.WriteLine(@break() + "to you and recognises you.");
                         longhr();
+                        Console.Clear();
                         dead = Dead();
                         break;
                     }
@@ -236,6 +248,7 @@ namespace MiniAdventureStory
                     "B)\t Throw a stone into the box to attract the attention of the giant cat.");
                     while (true)
                     {
+                        dead = false;
                         hr();
                         Console.Write(@break() +
                         $"{playerName}: ");
@@ -250,6 +263,7 @@ namespace MiniAdventureStory
                         }
                         else if (secondChoose == "B" || secondChoose == "b")
                         {
+
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine(@"
                         __        .-.
@@ -264,6 +278,7 @@ namespace MiniAdventureStory
                             longhr();
                             Console.WriteLine(@break() + "You scared the cat and got its attention.");
                             longhr();
+                            Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine(@"
                         /)
@@ -294,6 +309,7 @@ namespace MiniAdventureStory
     ");
                             Console.ForegroundColor = ConsoleColor.White;
                             longhr();
+                            Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine(@"
                                                              _...---.._
@@ -324,6 +340,7 @@ namespace MiniAdventureStory
               `.___;");
                             Console.ForegroundColor = ConsoleColor.White;
                             longhr();
+                            Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine(@"
               ,-.       _,---._ __  / \
@@ -349,23 +366,26 @@ namespace MiniAdventureStory
                             continue;
                         }
                     }
+                    
                 }
                 #endregion
-
+                
                 #region Third Choose
                 if (dead == false)
                 {
                     Console.WriteLine(
                     "A)\t The giant cat's arse looks like it deserves a kick.\n" +
-                    "B)\t Try to go out in quiet and calm steps.");               
+                    "B)\t Try to go out in quiet and calm steps.");
                     while (true)
                     {
                         hr();
                         Console.Write(@break() + $"{playerName}: ");
                         string secondChoose = Console.ReadLine();
                         hr();
+                        
                         if (secondChoose == "A" || secondChoose == "a")
                         {
+                            Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine(@"
              /\     /\
@@ -384,11 +404,13 @@ namespace MiniAdventureStory
                             Console.WriteLine(@break() + "Really?");
                             Console.WriteLine(@break() + "The giant cat spotted you.");
                             longhr();
+                            Console.Clear();
                             dead = Dead();
                             break;
                         }
                         else if (secondChoose == "B" || secondChoose == "b")
                         {
+                            Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine(@"
         Y
@@ -407,10 +429,11 @@ namespace MiniAdventureStory
                       `.  `.             .'  /
                         `.   ~ - - - - ~   .'
                            ~ . _ _ _ _ . ~");
-                            longhr();
                             Console.ForegroundColor = ConsoleColor.White;
+                            longhr();
                             Console.WriteLine(@break() + "You ran away like a snake without making a sound.");
                             longhr();
+                            Console.Clear();
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine(@"
                  .       .
@@ -422,8 +445,9 @@ namespace MiniAdventureStory
                             Console.ForegroundColor = ConsoleColor.White;
                             longhr();
                             Console.WriteLine(@break() + "Well done, you escaped from the cave.");
-                            longhr();
+                            longhr(); longhr();
                             Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.Clear();
                             Console.WriteLine(@"
                 .               ,.
               T.""-._..---.._,-""/|
@@ -449,8 +473,9 @@ namespace MiniAdventureStory
                                           \");
                             Console.ForegroundColor = ConsoleColor.White;
                             Console.WriteLine(@break() + "Or were you kidnapped?");
-                            longhr();
+                            longhr(); longhr(); longhr();
                             Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Clear();
                             Console.WriteLine(@"
                        .'\   /`.
                      .'.-.`-'.-.`.
@@ -472,6 +497,7 @@ namespace MiniAdventureStory
                             longhr();
                             longhr();
                             Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Clear();
                             Console.WriteLine(@"
                          oOOO()
                          /  _)
@@ -503,13 +529,14 @@ namespace MiniAdventureStory
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine(@break() + "HE HE HE HE HE");
                             Console.ForegroundColor = ConsoleColor.White;
-                            longhr();
+                            longhr(); longhr();
+                            Console.Clear();
                             credits();
                             return;
                         }
                         else
                         {
-                            Console.WriteLine(@break() + "You gave the wrong answer!\nStart again.");
+                            Console.WriteLine(@break() + "Invalid input!");
                             continue;
                         }
                     }
@@ -520,6 +547,7 @@ namespace MiniAdventureStory
         }
         private static bool Dead()
         {
+            Console.Clear();
             bool dead;
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(@"
@@ -545,6 +573,7 @@ namespace MiniAdventureStory
             longhr();
             Console.WriteLine(@break() + "The giant cat attacks you and rips you to shreds in seconds.");
             longhr();
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(@"
                 .__---~~~(~~-_.
@@ -556,13 +585,20 @@ namespace MiniAdventureStory
             (@) (@) `````      `-_(())_-~  mn");
             Console.ForegroundColor = ConsoleColor.White;
             hr();
+            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(@break() + @break() + "Y O U   A R E   D E A D");
-            dead = true;
             Console.ForegroundColor = ConsoleColor.White;
             longhr();
-            Console.WriteLine(@break() + "Back to the beginning...");
             longhr();
+            dead = true;
+            longhr();
+            Console.Clear();
+            Console.WriteLine(@break() + "Back to the beginning...");
+            Console.ReadKey();
+            longhr();
+            longhr();
+            Console.Clear();
             return dead;
         }
 
@@ -574,7 +610,7 @@ namespace MiniAdventureStory
         private static void hr()
         {
             Console.WriteLine(new string('-', 80));
-            Thread.Sleep(1500);
+            Thread.Sleep(2000);
         }
 
         private static void longhr()
