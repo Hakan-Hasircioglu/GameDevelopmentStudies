@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,7 +43,22 @@ namespace MovementTutorial
                     case 's':
                         charPosY++;
                         break;
-
+                }
+                if (charPosY < 1)
+                {
+                    charPosY = 1;
+                }
+                else if (charPosY > 5)
+                {
+                    charPosY = 5;
+                }
+                if (charPosX < 1)
+                {
+                    charPosX = 1;
+                }
+                else if (charPosX > 10)
+                {
+                    charPosX = 10;
                 }
             }
         }
