@@ -1,0 +1,7 @@
+C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\bin\Debug\TerminalArcadeGame.exe.config
+C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\bin\Debug\TerminalArcadeGame.exe
+C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\bin\Debug\TerminalArcadeGame.pdb
+C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.csproj.AssemblyReference.cache
+C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.csproj.CoreCompileInputs.cache
+C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.exe
+C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.pdb
