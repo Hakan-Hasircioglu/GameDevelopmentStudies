@@ -1,0 +1,14 @@
+C:\Users\hasir\OneDrive\Masaüstü\MovementTutorial\bin\Debug\MovementTutorial.exe.config
+C:\Users\hasir\OneDrive\Masaüstü\MovementTutorial\bin\Debug\MovementTutorial.exe
+C:\Users\hasir\OneDrive\Masaüstü\MovementTutorial\bin\Debug\MovementTutorial.pdb
+C:\Users\hasir\OneDrive\Masaüstü\MovementTutorial\obj\Debug\MovementTutorial.csproj.AssemblyReference.cache
+C:\Users\hasir\OneDrive\Masaüstü\MovementTutorial\obj\Debug\MovementTutorial.csproj.CoreCompileInputs.cache
+C:\Users\hasir\OneDrive\Masaüstü\MovementTutorial\obj\Debug\MovementTutorial.exe
+C:\Users\hasir\OneDrive\Masaüstü\MovementTutorial\obj\Debug\MovementTutorial.pdb
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\MovementTutorial\bin\Debug\MovementTutorial.exe.config
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\MovementTutorial\bin\Debug\MovementTutorial.exe
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\MovementTutorial\bin\Debug\MovementTutorial.pdb
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\MovementTutorial\obj\Debug\MovementTutorial.csproj.AssemblyReference.cache
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\MovementTutorial\obj\Debug\MovementTutorial.csproj.CoreCompileInputs.cache
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\MovementTutorial\obj\Debug\MovementTutorial.exe
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\MovementTutorial\obj\Debug\MovementTutorial.pdb
