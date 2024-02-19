@@ -5,3 +5,10 @@ C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGa
 C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.csproj.CoreCompileInputs.cache
 C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.exe
 C:\Users\hasir\OneDrive\Masaüstü\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.pdb
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\TerminalGameScripts\TerminalArcadeGame\bin\Debug\TerminalArcadeGame.exe.config
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\TerminalGameScripts\TerminalArcadeGame\bin\Debug\TerminalArcadeGame.exe
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\TerminalGameScripts\TerminalArcadeGame\bin\Debug\TerminalArcadeGame.pdb
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\TerminalGameScripts\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.csproj.AssemblyReference.cache
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\TerminalGameScripts\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.csproj.CoreCompileInputs.cache
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\TerminalGameScripts\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.exe
+C:\Users\hasir\C_W_C_X\Game Development\GameDevelopmentStudies\TerminalGameScripts\TerminalArcadeGame\obj\Debug\TerminalArcadeGame.pdb

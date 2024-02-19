@@ -1,57 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
-namespace TerminalArcadeGame
+namespace TerminalGame
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            #region Difficulity
-            int diff = 0;
-            while (true)
-            {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Difficulty:\nEasy = E\tNormal = N\tHard = H\tImpossible = I");
-                char difficulty = Console.ReadKey().KeyChar;
-                if (difficulty == 'E' || difficulty == 'e')
-                {
-                    diff = 500;
-                    break;
-                }
-                else if (difficulty == 'N' || difficulty == 'n')
-                {
-                    diff = 350;
-                    break;
-                }
-                else if (difficulty == 'H' || difficulty == 'h')
-                {
-                    diff = 100;
-                    break;
-                }
-                else if (difficulty == 'I' || difficulty == 'i')
-                {
-                    diff = 20;
-                    break;
-                }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine("Invalid input!");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    continue;
-                }
-            }
             Console.ForegroundColor = ConsoleColor.Green;
-            #endregion
-
             while (true)
             {
-                #region Variables   
+                #region Variables
+                // BOOL
+                bool IsOk = true;
                 int score = 1;
                 // Player
                 int positionX = -7;
@@ -82,11 +43,54 @@ namespace TerminalArcadeGame
                 int columnRevJokerY = 99;
                 // Check Game is Over
                 bool dead = false;
+                // Difficulty
+                int diff = 0;
                 #endregion
                 while (true)
                 {
                     while (!Console.KeyAvailable)
                     {
+                        #region Difficulity
+                        while (IsOk)
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("Difficulty:\nEasy = E\tNormal = N\tHard = H\tImpossible = I");
+                            char difficulty = Console.ReadKey().KeyChar;
+                            if (difficulty == 'E' || difficulty == 'e')
+                            {
+                                diff = 500;
+                                IsOk = false;
+                                break;
+                            }
+                            else if (difficulty == 'N' || difficulty == 'n')
+                            {
+                                diff = 350;
+                                IsOk = false;
+                                break;
+                            }
+                            else if (difficulty == 'H' || difficulty == 'h')
+                            {
+                                diff = 100;
+                                IsOk = false;
+                                break;
+                            }
+                            else if (difficulty == 'I' || difficulty == 'i')
+                            {
+                                diff = 20;
+                                IsOk = false;
+                                break;
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                Console.WriteLine("Invalid input!");
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                continue;
+                            }
+                        }
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        #endregion
+
                         #region Column Spawnning And Positioning
                         if (score > 50)
                         {
@@ -167,17 +171,16 @@ namespace TerminalArcadeGame
                             columnPositionX5 = rng.Next(2, 5);
                         }
                         #endregion
-                        
+
                         #region In Game
                         Console.Clear();
-                        Console.Write($"Quit: Q\tRestart: R\nScore:{score}");
-                        Console.WriteLine();
+                        Console.WriteLine($"Score:{score}");
                         score++;
                         for (int y = -9; y <= 1; y++)
                         {
                             for (int x = -9; x <= 5; x++)
                             {
-                                if (positionY == y && positionX == x)
+                               if (positionY == y && positionX == x)
                                 {
                                     Console.ForegroundColor = ConsoleColor.Blue;
                                     Console.Write(">");
@@ -248,7 +251,6 @@ namespace TerminalArcadeGame
                                 {
                                     Console.Write(" ");
                                 }
-
                             }
                             Console.WriteLine();
                         }
@@ -272,7 +274,7 @@ namespace TerminalArcadeGame
                         {
                             dead = true;
                             break;
-                        }
+                        }                       
                         #endregion
 
                     }
@@ -305,15 +307,6 @@ namespace TerminalArcadeGame
                     {
                         positionY++;
                     }
-                    else if (input_.KeyChar == 'R' || input_.KeyChar == 'r')
-                    {
-                        break;
-                    }
-                    else if (input_.KeyChar == 'Q' || input_.KeyChar == 'q')
-                    {
-                        Console.WriteLine();
-                        return; ;
-                    }
 
                     #endregion
                 }
@@ -327,6 +320,7 @@ namespace TerminalArcadeGame
                     if (again == 'Y' || again == 'y')
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
+                        IsOk = true;
                         break;
                     }
                     else if (again == 'N' || again == 'n')
