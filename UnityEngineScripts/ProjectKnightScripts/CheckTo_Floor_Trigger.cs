@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class CheckToFloorTrigger : MonoBehaviour
+public class CheckTo_Floor_Trigger : MonoBehaviour
 {
     #region Variables
     public GameObject playerObject;
