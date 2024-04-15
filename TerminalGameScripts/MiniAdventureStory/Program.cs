@@ -210,9 +210,9 @@ namespace MiniAdventureStory
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine(@"
                        _                         _
-                      |_|              Fuck You |_|
+                      |_|                       |_|
                       | |         /^^^\         | |
-                     _| |_       (|""o""|)       _| |_
+                     _| |_      (|""o""|)      _| |_
                    _| | | | _    (_---_)    _ | | | |_ 
                   | | | | |' |    _| |_    | `| | | | |
                   \          /   / \ /   \  \         /
